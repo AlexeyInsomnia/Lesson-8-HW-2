@@ -15,6 +15,7 @@
 		FAC1629E1C218A4300361F3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC1629C1C218A4300361F3F /* LaunchScreen.storyboard */; };
 		FAC162A91C218A4400361F3F /* Lesson_8_HW_2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC162A81C218A4400361F3F /* Lesson_8_HW_2Tests.m */; };
 		FAC162B41C218A4400361F3F /* Lesson_8_HW_2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC162B31C218A4400361F3F /* Lesson_8_HW_2UITests.m */; };
+		FAC162C31C218A5600361F3F /* APStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC162C21C218A5600361F3F /* APStudent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		FAC162AF1C218A4400361F3F /* Lesson 8 HW 2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Lesson 8 HW 2UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC162B31C218A4400361F3F /* Lesson_8_HW_2UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Lesson_8_HW_2UITests.m; sourceTree = "<group>"; };
 		FAC162B51C218A4400361F3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAC162C11C218A5600361F3F /* APStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APStudent.h; sourceTree = "<group>"; };
+		FAC162C21C218A5600361F3F /* APStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APStudent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 		FAC1628D1C218A4300361F3F /* Lesson 8 HW 2 */ = {
 			isa = PBXGroup;
 			children = (
+				FAC162C11C218A5600361F3F /* APStudent.h */,
+				FAC162C21C218A5600361F3F /* APStudent.m */,
 				FAC162911C218A4300361F3F /* AppDelegate.h */,
 				FAC162921C218A4300361F3F /* AppDelegate.m */,
 				FAC162941C218A4300361F3F /* ViewController.h */,
@@ -272,6 +277,7 @@
 			files = (
 				FAC162961C218A4300361F3F /* ViewController.m in Sources */,
 				FAC162931C218A4300361F3F /* AppDelegate.m in Sources */,
+				FAC162C31C218A5600361F3F /* APStudent.m in Sources */,
 				FAC162901C218A4300361F3F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

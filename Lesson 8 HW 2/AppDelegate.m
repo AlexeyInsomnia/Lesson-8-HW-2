@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "APStudent.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,74 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    NSArray* arrayName = [[NSArray alloc] initWithObjects:@"Celica", @"Boris",@"Andrew",@"Durango", nil];
+    
+    NSArray* arrayLastName = [[NSArray alloc] initWithObjects:@"Stevenson", @"Armaginskiy",@"Golt",@"Snow", nil];
+    
+    NSArray* arrayHello = [[NSArray alloc] initWithObjects:@"Hi, master", @"Yo man",@"Hello there",@"How R U", nil];
+    
+    NSMutableDictionary* dictionary = [[NSMutableDictionary alloc ] init];
+    
+    NSMutableArray* arrayKeys = [[NSMutableArray alloc] init];
+
+    
+    NSLog(@"**************** baby mode is ON, tasks 1-4***********");
+    
+    for (int i=0; i<[arrayName count]; i++) {
+        
+        APStudent* student = [[APStudent alloc ] init];
+        student.name = [arrayName objectAtIndex:i];
+        student.lastName = [arrayLastName objectAtIndex:i];
+        student.hello = [arrayHello objectAtIndex:i];
+        
+        NSString* namePlusLastName = [NSString stringWithFormat:@"%@ %@", [arrayName objectAtIndex:i],
+                                      [arrayLastName objectAtIndex:i]];
+        [arrayKeys addObject:namePlusLastName];
+        
+        [dictionary setObject:student forKey:namePlusLastName  ];
+        
+       // dictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:student, namePlusLastName, nil];
+        
+        NSLog(@"hi, anybody here ?  %@ ", dictionary);
+    }
+    
+    NSLog(@"****************student mode is ON, task 5***********");
+   
+    
+    
+    for (NSString* keys in [dictionary allKeys] ) {
+        id objs = [dictionary objectForKey:keys];
+        NSLog(@"key = %@, value = %@", keys, objs);
+    }
+    
+    NSLog(@"**************** master mode is ON, task 6*********** USING COMPARATOR");
+    
+    NSArray* newSortedArrayOfKeys = [NSArray arrayWithArray:arrayKeys];
+    
+    newSortedArrayOfKeys = [newSortedArrayOfKeys sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        
+        return  [(NSString*)obj1 compare:(NSString*)obj2];
+    }];
+    
+    NSLog(@"check it out - sorted by Comparator ");
+    
+    for (NSString* keys in newSortedArrayOfKeys ) {
+        id objs = [dictionary objectForKey:keys];
+        NSLog(@"key = %@, value = %@", keys, objs);
+    }
+ 
+    NSLog(@"**************** master mode is ON, task 6*********** USING SELECTOR");
+    
+    NSLog(@"check it out - not sorted is  - %@ \n AND NOW - SORTED BY SELECTOR", arrayKeys);
+    
+    NSArray* arraySortKey = [arrayKeys sortedArrayUsingSelector:@selector(compare:) ];
+    
+    for (NSString* keySort in arraySortKey) {
+        id obj = [dictionary objectForKey:keySort];
+        NSLog(@"key = %@, value = %@", keySort, obj);
+    }
+    
     return YES;
 }
 
